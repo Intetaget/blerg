@@ -22,7 +22,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    render :edit
+    render :edit  
+  end
+  def changeling
+    @post = Post.find(params[:id])
+    @post.update(title: params[:title], content: params[:content])
+    render :show
   end
 end
 

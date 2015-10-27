@@ -1,5 +1,17 @@
-<h1>Edit Post</h1>  
+<h1>Edit Path</h1>
 
+<%= form_tag(update_path, method:"put") do %>
+    <div class="post-field">
+      <%= label_tag "Title: " %>
+      <%= text_field_tag :title, @post.title %>
+    </div>
 
-    <%= edit_tag!" %>
-    <%= edit_tag "EDIT, Duh" %>
+    <div class="post-field">
+      <%= label_tag "Body: " %>
+      <%= text_area_tag :content, @post.content %>
+    </div>
+
+    <%= submit_tag "Change it NOW!!!" %>
+<% end %>
+
+<%= link_to "Neverdamnmind", :back %>
